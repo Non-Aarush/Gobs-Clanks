@@ -1,0 +1,52 @@
+[gd_scene load_steps=7 format=3 uid="uid://dopnsgso3glhf"]
+
+[ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_xbqnt"]
+[ext_resource type="Texture2D" uid="uid://f7ipavdktikn" path="res://image_2025-02-15_204305849.jpg" id="2_hvtfd"]
+[ext_resource type="Texture2D" uid="uid://c5j0ams40ga3s" path="res://assets/Tiny Swords (Update 010)/UI/Buttons/Button_Blue_Pressed.png" id="3_7n5qs"]
+[ext_resource type="Texture2D" uid="uid://4ugj37yl4jy8" path="res://Button_Blue.png" id="3_34ufe"]
+[ext_resource type="Texture2D" uid="uid://ciw66gs3xka0w" path="res://assets/Tiny Swords (Update 010)/UI/Buttons/Button_Red_Pressed.png" id="5_48hri"]
+[ext_resource type="Texture2D" uid="uid://dlbjtkkkqxcy5" path="res://Button_Red.png" id="5_uemln"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xbqnt")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(17.5, -3.99995)
+scale = Vector2(3.02336, 2.81365)
+texture = ExtResource("2_hvtfd")
+
+[node name="Start" type="TextureButton" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+offset_left = -85.0
+offset_top = -129.0
+offset_right = -21.0
+offset_bottom = -65.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(3.08715, 2.8518)
+texture_normal = ExtResource("3_34ufe")
+texture_pressed = ExtResource("3_7n5qs")
+
+[node name="Quit" type="TextureButton" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = -97.0
+offset_top = 84.0
+offset_right = -33.0
+offset_bottom = 148.0
+scale = Vector2(3.43862, 2.96963)
+texture_normal = ExtResource("5_uemln")
+texture_pressed = ExtResource("5_48hri")
+
+[connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]

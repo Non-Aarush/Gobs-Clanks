@@ -1,0 +1,544 @@
+[gd_resource type="TileSet" load_steps=58 format=3 uid="uid://bw1kg4h7fvtij"]
+
+[ext_resource type="Texture2D" uid="uid://ct2vo31qwiqwj" path="res://assets/Tiny Swords (Update 010)/Terrain/Bridge/Bridge_All.png" id="1_5eixr"]
+[ext_resource type="Texture2D" uid="uid://d7xxmkjsg7eb" path="res://assets/Tiny Swords (Update 010)/Terrain/Ground/Tilemap_Elevation.png" id="2_tr3ki"]
+[ext_resource type="Texture2D" uid="uid://bm7wi7hvpbdd6" path="res://assets/Tiny Swords (Update 010)/Terrain/Ground/Tilemap_Flat.png" id="3_jt8k1"]
+[ext_resource type="Texture2D" uid="uid://b0hjtwq0uveag" path="res://assets/Tiny Swords (Update 010)/Resources/Trees/02.png" id="3_peaev"]
+[ext_resource type="Texture2D" uid="uid://bwh4w1orskpjd" path="res://assets/Tiny Swords (Update 010)/Terrain/Water/Water.png" id="4_fxevw"]
+[ext_resource type="Texture2D" uid="uid://bb6kgj1tijici" path="res://assets/Tiny Swords (Update 010)/Resources/Trees/03.png" id="4_upc1y"]
+[ext_resource type="Texture2D" uid="uid://bhqwmsy8dfdha" path="res://assets/Tiny Swords (Update 010)/Terrain/Water/Rocks/Rocks_01.png" id="5_bs45m"]
+[ext_resource type="Texture2D" uid="uid://3ttp2wa8s7sk" path="res://assets/Tiny Swords (Update 010)/Resources/Trees/04.png" id="5_obwin"]
+[ext_resource type="Texture2D" uid="uid://o8e1fbo6p8h0" path="res://assets/Tiny Swords (Update 010)/Terrain/Water/Rocks/Rocks_03.png" id="6_gtk0g"]
+[ext_resource type="Texture2D" uid="uid://37vmbaca84hw" path="res://assets/Tiny Swords (Update 010)/Resources/Trees/05.png" id="6_rh7yr"]
+[ext_resource type="Texture2D" uid="uid://bfwq3ghl5hflf" path="res://assets/Tiny Swords (Update 010)/Terrain/Water/Rocks/Rocks_04.png" id="7_5jhdk"]
+[ext_resource type="Texture2D" uid="uid://dqmj2j16823c7" path="res://assets/Tiny Swords (Update 010)/Resources/Trees/06.png" id="7_cfeaq"]
+[ext_resource type="Texture2D" uid="uid://7g5g5te7r188" path="res://assets/Tiny Swords (Update 010)/Terrain/Water/Foam/Foam.png" id="8_2q03k"]
+[ext_resource type="Texture2D" uid="uid://75oir4jcx6ek" path="res://assets/Tiny Swords (Update 010)/Resources/Trees/07.png" id="8_sg0wg"]
+[ext_resource type="Texture2D" uid="uid://ca42pvxga4vky" path="res://assets/Tiny Swords (Update 010)/Resources/Trees/08.png" id="9_00yds"]
+[ext_resource type="Texture2D" uid="uid://b1i20cvvtkech" path="res://assets/Tiny Swords (Update 010)/Resources/Trees/09.png" id="10_lbit1"]
+[ext_resource type="Texture2D" uid="uid://sxtfjkmh0421" path="res://assets/Tiny Swords (Update 010)/Resources/Trees/10.png" id="11_lo1v7"]
+[ext_resource type="Texture2D" uid="uid://djaxamf8arg80" path="res://assets/Tiny Swords (Update 010)/Resources/Trees/11.png" id="12_4kird"]
+[ext_resource type="Texture2D" uid="uid://dssqd2ud8qy3x" path="res://assets/Tiny Swords (Update 010)/Resources/Trees/12.png" id="14_f7xct"]
+[ext_resource type="Texture2D" uid="uid://7rdgnc3redqb" path="res://assets/Tiny Swords (Update 010)/Resources/Trees/13.png" id="15_0ifsg"]
+[ext_resource type="Texture2D" uid="uid://o7fxxw2pc44d" path="res://assets/Tiny Swords (Update 010)/Resources/Trees/14.png" id="16_bccvx"]
+[ext_resource type="Texture2D" uid="uid://bt3v0d8dxp53s" path="res://assets/Tiny Swords (Update 010)/Resources/Trees/15.png" id="17_8i3p1"]
+[ext_resource type="Texture2D" uid="uid://bo5h8qm35oiws" path="res://assets/Tiny Swords (Update 010)/Resources/Trees/16.png" id="18_omfbc"]
+[ext_resource type="Texture2D" uid="uid://cunb6hu25k1nx" path="res://assets/Tiny Swords (Update 010)/Resources/Trees/17.png" id="19_w6th6"]
+[ext_resource type="Texture2D" uid="uid://t06gxlk80v3v" path="res://assets/Tiny Swords (Update 010)/Resources/Trees/18.png" id="20_jiu18"]
+[ext_resource type="Texture2D" uid="uid://oo5xxhmtko8y" path="res://assets/Tiny Swords (Update 010)/Resources/Trees/Tree.png" id="21_hofwd"]
+[ext_resource type="Texture2D" uid="uid://cyqg08c4d6prx" path="res://x-mark-64 (1).png" id="22_vbfnc"]
+[ext_resource type="Texture2D" uid="uid://bb0rraqihpr5v" path="res://assets/Tiny Swords (Update 010)/Resources/Trees/01.png" id="27_pbev5"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rk2wy"]
+texture = ExtResource("1_5eixr")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+0:1/next_alternative_id = 3
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+0:2/next_alternative_id = 2
+0:2/0 = 0
+1:2/0 = 0
+0:3/next_alternative_id = 2
+0:3/0 = 0
+2:3/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3emui"]
+texture = ExtResource("2_tr3ki")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wf4oo"]
+texture = ExtResource("3_peaev")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_idwp0"]
+texture = ExtResource("4_upc1y")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8ot8s"]
+texture = ExtResource("5_obwin")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_em868"]
+texture = ExtResource("6_rh7yr")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uyhc1"]
+texture = ExtResource("7_cfeaq")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mlalh"]
+texture = ExtResource("8_sg0wg")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ui4lq"]
+texture = ExtResource("9_00yds")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uwv7p"]
+texture = ExtResource("10_lbit1")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6a50q"]
+texture = ExtResource("11_lo1v7")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0sm5x"]
+texture = ExtResource("12_4kird")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2hs5g"]
+texture = ExtResource("3_jt8k1")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+9:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+8:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+8:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+8:3/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cjw4o"]
+texture = ExtResource("14_f7xct")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vcncl"]
+texture = ExtResource("15_0ifsg")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5psnn"]
+texture = ExtResource("16_bccvx")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hfcvc"]
+texture = ExtResource("17_8i3p1")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_05gkp"]
+texture = ExtResource("18_omfbc")
+texture_region_size = Vector2i(64, 64)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_f47h5"]
+texture = ExtResource("19_w6th6")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+0:1/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jnxq5"]
+texture = ExtResource("20_jiu18")
+texture_region_size = Vector2i(64, 64)
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+1:2/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_v0cnn"]
+texture = ExtResource("21_hofwd")
+texture_region_size = Vector2i(64, 64)
+1:0/animation_columns = 4
+1:0/animation_separation = Vector2i(2, 0)
+1:0/animation_speed = 4.0
+1:0/animation_frame_0/duration = 1.0
+1:0/animation_frame_1/duration = 1.0
+1:0/animation_frame_2/duration = 1.0
+1:0/animation_frame_3/duration = 1.0
+1:0/0 = 0
+1:0/0/terrain_set = 0
+1:0/0/terrain = 2
+1:0/0/terrains_peering_bit/right_side = 2
+1:0/0/terrains_peering_bit/bottom_right_corner = 2
+1:0/0/terrains_peering_bit/bottom_side = 2
+1:0/0/terrains_peering_bit/bottom_left_corner = 2
+1:0/0/terrains_peering_bit/left_side = 2
+1:0/0/terrains_peering_bit/top_side = 2
+0:1/animation_columns = 4
+0:1/animation_separation = Vector2i(2, 0)
+0:1/animation_speed = 4.0
+0:1/animation_frame_0/duration = 1.0
+0:1/animation_frame_1/duration = 1.0
+0:1/animation_frame_2/duration = 1.0
+0:1/animation_frame_3/duration = 1.0
+0:1/0 = 0
+0:1/0/terrain_set = 0
+0:1/0/terrains_peering_bit/right_side = 2
+0:1/0/terrains_peering_bit/bottom_right_corner = 2
+0:1/0/terrains_peering_bit/top_right_corner = 2
+2:1/animation_columns = 4
+2:1/animation_separation = Vector2i(2, 0)
+2:1/animation_speed = 4.0
+2:1/animation_frame_0/duration = 1.0
+2:1/animation_frame_1/duration = 1.0
+2:1/animation_frame_2/duration = 1.0
+2:1/animation_frame_3/duration = 1.0
+2:1/0 = 0
+2:1/0/terrain_set = 0
+2:1/0/terrains_peering_bit/bottom_left_corner = 2
+2:1/0/terrains_peering_bit/left_side = 2
+2:1/0/terrains_peering_bit/top_left_corner = 2
+0:2/animation_columns = 4
+0:2/animation_separation = Vector2i(2, 0)
+0:2/animation_speed = 4.0
+0:2/animation_frame_0/duration = 1.0
+0:2/animation_frame_1/duration = 1.0
+0:2/animation_frame_2/duration = 1.0
+0:2/animation_frame_3/duration = 1.0
+0:2/0 = 0
+0:2/0/terrain_set = 0
+0:2/0/terrains_peering_bit/right_side = 2
+0:2/0/terrains_peering_bit/top_right_corner = 2
+1:2/animation_columns = 4
+1:2/animation_separation = Vector2i(2, 0)
+1:2/animation_speed = 4.0
+1:2/animation_frame_0/duration = 1.0
+1:2/animation_frame_1/duration = 1.0
+1:2/animation_frame_2/duration = 1.0
+1:2/animation_frame_3/duration = 1.0
+1:2/0 = 0
+1:2/0/terrain_set = 0
+1:2/0/terrain = 2
+1:2/0/terrains_peering_bit/right_side = 2
+1:2/0/terrains_peering_bit/bottom_side = 2
+1:2/0/terrains_peering_bit/left_side = 2
+1:2/0/terrains_peering_bit/top_left_corner = 2
+1:2/0/terrains_peering_bit/top_side = 2
+1:2/0/terrains_peering_bit/top_right_corner = 2
+2:2/animation_columns = 4
+2:2/animation_separation = Vector2i(2, 0)
+2:2/animation_speed = 4.0
+2:2/animation_frame_0/duration = 1.0
+2:2/animation_frame_1/duration = 1.0
+2:2/animation_frame_2/duration = 1.0
+2:2/animation_frame_3/duration = 1.0
+2:2/0 = 0
+2:2/0/terrain_set = 0
+2:2/0/terrains_peering_bit/left_side = 2
+2:2/0/terrains_peering_bit/top_left_corner = 2
+1:8/0 = 0
+1:1/animation_columns = 4
+1:1/animation_separation = Vector2i(2, 0)
+1:1/animation_speed = 4.0
+1:1/animation_frame_0/duration = 1.0
+1:1/animation_frame_1/duration = 1.0
+1:1/animation_frame_2/duration = 1.0
+1:1/animation_frame_3/duration = 1.0
+1:1/0 = 0
+1:1/0/terrain_set = 0
+1:1/0/terrain = 2
+1:1/0/terrains_peering_bit/right_side = 2
+1:1/0/terrains_peering_bit/bottom_right_corner = 2
+1:1/0/terrains_peering_bit/bottom_side = 2
+1:1/0/terrains_peering_bit/bottom_left_corner = 2
+1:1/0/terrains_peering_bit/left_side = 2
+1:1/0/terrains_peering_bit/top_left_corner = 2
+1:1/0/terrains_peering_bit/top_side = 2
+1:1/0/terrains_peering_bit/top_right_corner = 2
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4iuff"]
+texture = ExtResource("22_vbfnc")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+0:0/0/z_index = -1
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_autbg"]
+texture = ExtResource("4_fxevw")
+texture_region_size = Vector2i(64, 64)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kqssr"]
+texture = ExtResource("5_bs45m")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+9:0/0 = 0
+10:0/0 = 0
+11:0/0 = 0
+12:0/0 = 0
+13:0/0 = 0
+14:0/0 = 0
+15:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+8:1/0 = 0
+9:1/0 = 0
+10:1/0 = 0
+11:1/0 = 0
+12:1/0 = 0
+13:1/0 = 0
+14:1/0 = 0
+15:1/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_s7l74"]
+texture = ExtResource("6_gtk0g")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+9:0/0 = 0
+10:0/0 = 0
+11:0/0 = 0
+12:0/0 = 0
+13:0/0 = 0
+14:0/0 = 0
+15:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+8:1/0 = 0
+9:1/0 = 0
+10:1/0 = 0
+11:1/0 = 0
+12:1/0 = 0
+13:1/0 = 0
+14:1/0 = 0
+15:1/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_667jb"]
+texture = ExtResource("7_5jhdk")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+9:0/0 = 0
+10:0/0 = 0
+11:0/0 = 0
+12:0/0 = 0
+13:0/0 = 0
+14:0/0 = 0
+15:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+8:1/0 = 0
+9:1/0 = 0
+10:1/0 = 0
+11:1/0 = 0
+12:1/0 = 0
+13:1/0 = 0
+14:1/0 = 0
+15:1/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_y31mp"]
+texture = ExtResource("8_2q03k")
+texture_region_size = Vector2i(64, 64)
+1:0/animation_columns = 8
+1:0/animation_separation = Vector2i(2, 0)
+1:0/animation_speed = 5.0
+1:0/animation_frame_0/duration = 1.0
+1:0/animation_frame_1/duration = 1.0
+1:0/animation_frame_2/duration = 1.0
+1:0/animation_frame_3/duration = 1.0
+1:0/animation_frame_4/duration = 1.0
+1:0/animation_frame_5/duration = 1.0
+1:0/animation_frame_6/duration = 1.0
+1:0/animation_frame_7/duration = 1.0
+1:0/0 = 0
+1:0/0/terrain_set = 0
+1:0/0/terrains_peering_bit/bottom_right_corner = 0
+1:0/0/terrains_peering_bit/bottom_side = 0
+1:0/0/terrains_peering_bit/bottom_left_corner = 0
+0:1/animation_columns = 8
+0:1/animation_separation = Vector2i(2, 0)
+0:1/animation_speed = 5.0
+0:1/animation_frame_0/duration = 1.0
+0:1/animation_frame_1/duration = 1.0
+0:1/animation_frame_2/duration = 1.0
+0:1/animation_frame_3/duration = 1.0
+0:1/animation_frame_4/duration = 1.0
+0:1/animation_frame_5/duration = 1.0
+0:1/animation_frame_6/duration = 1.0
+0:1/animation_frame_7/duration = 1.0
+0:1/0 = 0
+0:1/0/terrain_set = 0
+0:1/0/terrains_peering_bit/right_side = 0
+0:1/0/terrains_peering_bit/bottom_right_corner = 0
+0:1/0/terrains_peering_bit/top_right_corner = 0
+2:1/animation_columns = 8
+2:1/animation_separation = Vector2i(2, 0)
+2:1/animation_speed = 5.0
+2:1/animation_frame_0/duration = 1.0
+2:1/animation_frame_1/duration = 1.0
+2:1/animation_frame_2/duration = 1.0
+2:1/animation_frame_3/duration = 1.0
+2:1/animation_frame_4/duration = 1.0
+2:1/animation_frame_5/duration = 1.0
+2:1/animation_frame_6/duration = 1.0
+2:1/animation_frame_7/duration = 1.0
+2:1/0 = 0
+2:1/0/terrain_set = 0
+2:1/0/terrains_peering_bit/bottom_left_corner = 0
+2:1/0/terrains_peering_bit/left_side = 0
+2:1/0/terrains_peering_bit/top_left_corner = 0
+1:2/animation_columns = 8
+1:2/animation_separation = Vector2i(2, 0)
+1:2/animation_speed = 5.0
+1:2/animation_frame_0/duration = 1.0
+1:2/animation_frame_1/duration = 1.0
+1:2/animation_frame_2/duration = 1.0
+1:2/animation_frame_3/duration = 1.0
+1:2/animation_frame_4/duration = 1.0
+1:2/animation_frame_5/duration = 1.0
+1:2/animation_frame_6/duration = 1.0
+1:2/animation_frame_7/duration = 1.0
+1:2/0 = 0
+1:2/0/terrain_set = 0
+1:2/0/terrains_peering_bit/top_left_corner = 0
+1:2/0/terrains_peering_bit/top_side = 0
+1:2/0/terrains_peering_bit/top_right_corner = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ywwjn"]
+texture = ExtResource("4_fxevw")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_by6si"]
+texture = ExtResource("27_pbev5")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+
+[resource]
+tile_size = Vector2i(64, 64)
+physics_layer_0/collision_layer = 1
+terrain_set_0/mode = 0
+terrain_set_0/terrain_0/name = "WaterFoam"
+terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
+terrain_set_0/terrain_1/name = "BaseWater-Grass"
+terrain_set_0/terrain_1/color = Color(0.5, 0.4375, 0.25, 1)
+terrain_set_0/terrain_2/name = "Tree"
+terrain_set_0/terrain_2/color = Color(0.46875, 0.5, 0.25, 1)
+sources/0 = SubResource("TileSetAtlasSource_rk2wy")
+sources/1 = SubResource("TileSetAtlasSource_3emui")
+sources/2 = SubResource("TileSetAtlasSource_2hs5g")
+sources/3 = SubResource("TileSetAtlasSource_autbg")
+sources/4 = SubResource("TileSetAtlasSource_kqssr")
+sources/5 = SubResource("TileSetAtlasSource_s7l74")
+sources/6 = SubResource("TileSetAtlasSource_667jb")
+sources/7 = SubResource("TileSetAtlasSource_y31mp")
+sources/8 = SubResource("TileSetAtlasSource_ywwjn")
+sources/9 = SubResource("TileSetAtlasSource_by6si")
+sources/10 = SubResource("TileSetAtlasSource_wf4oo")
+sources/11 = SubResource("TileSetAtlasSource_idwp0")
+sources/12 = SubResource("TileSetAtlasSource_8ot8s")
+sources/13 = SubResource("TileSetAtlasSource_em868")
+sources/14 = SubResource("TileSetAtlasSource_uyhc1")
+sources/15 = SubResource("TileSetAtlasSource_mlalh")
+sources/16 = SubResource("TileSetAtlasSource_ui4lq")
+sources/17 = SubResource("TileSetAtlasSource_uwv7p")
+sources/18 = SubResource("TileSetAtlasSource_6a50q")
+sources/19 = SubResource("TileSetAtlasSource_0sm5x")
+sources/20 = SubResource("TileSetAtlasSource_cjw4o")
+sources/21 = SubResource("TileSetAtlasSource_vcncl")
+sources/22 = SubResource("TileSetAtlasSource_5psnn")
+sources/23 = SubResource("TileSetAtlasSource_hfcvc")
+sources/24 = SubResource("TileSetAtlasSource_05gkp")
+sources/25 = SubResource("TileSetAtlasSource_f47h5")
+sources/26 = SubResource("TileSetAtlasSource_jnxq5")
+sources/27 = SubResource("TileSetAtlasSource_v0cnn")
+sources/28 = SubResource("TileSetAtlasSource_4iuff")

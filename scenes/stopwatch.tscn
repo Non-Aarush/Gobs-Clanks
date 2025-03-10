@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://t0xnyq37pdp8"]
+
+[ext_resource type="Script" path="res://scripts/stopwatch.gd" id="1_lkxfr"]
+[ext_resource type="FontFile" uid="uid://bqhml3nv7l2pk" path="res://GravityBold8.ttf" id="2_rwigv"]
+
+[node name="stopwatch" type="CanvasLayer"]
+script = ExtResource("1_lkxfr")
+
+[node name="stopwatchlabel" type="Label" parent="."]
+offset_top = -50.0
+offset_right = 134.0
+offset_bottom = -2.0
+theme_override_fonts/font = ExtResource("2_rwigv")
+text = " 
+ 00:00"

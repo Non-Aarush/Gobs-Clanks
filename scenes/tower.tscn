@@ -1,0 +1,61 @@
+[gd_scene load_steps=9 format=3 uid="uid://cp1x2t3f1hrgx"]
+
+[ext_resource type="Texture2D" uid="uid://naaiq6alxbd2" path="res://assets/Tiny Swords (Update 010)/Factions/Knights/Buildings/Tower/Tower_Construction.png" id="1_ooar8"]
+[ext_resource type="Script" path="res://scripts/tower.gd" id="1_uqlgw"]
+[ext_resource type="Texture2D" uid="uid://dghy0is1de3eq" path="res://Tower_Gray.png" id="2_f24y2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_55k2w"]
+atlas = ExtResource("1_ooar8")
+region = Rect2(0, 0, 128, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xubgf"]
+atlas = ExtResource("2_f24y2")
+region = Rect2(0, 0, 128, 256)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ndpm6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_55k2w")
+}],
+"loop": true,
+"name": &"construction",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xubgf")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nxgbi"]
+radius = 30.0
+height = 60.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cfetr"]
+size = Vector2(127, 73)
+
+[node name="tower" type="StaticBody2D"]
+script = ExtResource("1_uqlgw")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ndpm6")
+animation = &"construction"
+autoplay = "construction"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 54)
+shape = SubResource("CapsuleShape2D_nxgbi")
+
+[node name="tower_area" type="Area2D" parent="."]
+position = Vector2(-52, -41)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="tower_area"]
+position = Vector2(52.5, 97.5)
+shape = SubResource("RectangleShape2D_cfetr")
+
+[connection signal="area_entered" from="tower_area" to="." method="_on_tower_area_area_entered"]
+[connection signal="area_exited" from="tower_area" to="." method="_on_tower_area_area_exited"]
