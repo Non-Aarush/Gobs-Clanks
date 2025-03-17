@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://cp1x2t3f1hrgx"]
+[gd_scene load_steps=10 format=3 uid="uid://cp1x2t3f1hrgx"]
 
 [ext_resource type="Texture2D" uid="uid://naaiq6alxbd2" path="res://assets/Tiny Swords (Update 010)/Factions/Knights/Buildings/Tower/Tower_Construction.png" id="1_ooar8"]
 [ext_resource type="Script" path="res://scripts/tower.gd" id="1_uqlgw"]
 [ext_resource type="Texture2D" uid="uid://dghy0is1de3eq" path="res://Tower_Gray.png" id="2_f24y2"]
+[ext_resource type="PackedScene" uid="uid://h3hxvoqmdgwe" path="res://scenes/health_bar.tscn" id="4_75dhm"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_55k2w"]
 atlas = ExtResource("1_ooar8")
@@ -41,7 +42,7 @@ size = Vector2(127, 73)
 [node name="tower" type="StaticBody2D"]
 script = ExtResource("1_uqlgw")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." groups=["tower"]]
 sprite_frames = SubResource("SpriteFrames_ndpm6")
 animation = &"construction"
 autoplay = "construction"
@@ -56,6 +57,8 @@ position = Vector2(-52, -41)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="tower_area"]
 position = Vector2(52.5, 97.5)
 shape = SubResource("RectangleShape2D_cfetr")
+
+[node name="health_bar" parent="." instance=ExtResource("4_75dhm")]
 
 [connection signal="area_entered" from="tower_area" to="." method="_on_tower_area_area_entered"]
 [connection signal="area_exited" from="tower_area" to="." method="_on_tower_area_area_exited"]

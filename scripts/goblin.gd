@@ -28,10 +28,10 @@ var knockback_applied = false  # Flag to prevent continuous knockback
 func _physics_process(delta):
 	if not knockback_applied:
 		if player_in_detection_zone and player and player.has_method("player") and not player_in_attack_zone:
-			var direction = (player.position - position).normalized()
+			var direction = (player.global_position - global_position).normalized()
 			
 			# Prevent direct overlap by slowing down when close
-			if position.distance_to(player.position) < 20:  # Adjust this distance as needed
+			if global_position.distance_to(player.global_position) < 20:  # Adjust this distance as needed
 				velocity = direction * run_speed / 2  # Slow down when close to player
 			else:
 				velocity = direction * run_speed
@@ -39,7 +39,7 @@ func _physics_process(delta):
 			animated_sprite.play("run")
 			
 			# Flip sprite based on direction
-			if player.position.x < position.x:
+			if player.global_position.x < global_position.x:
 				animated_sprite.flip_h = true
 			else:
 				animated_sprite.flip_h = false
@@ -85,10 +85,10 @@ func _on_attack_zone_body_exited(body):
 		attack_cooldown = attack_interval  # Reset cooldown when exiting
 
 func attack_player():
-	if player and player.has_method("player") and player.position.x < position.x:  # Player is on the left
+	if player and player.has_method("player") and player.global_position.x < global_position.x:  # Player is on the left
 		animated_sprite.play("attack_side")
 		animated_sprite.flip_h = true
-	elif player and player.has_method("player") and player.position.x > position.x:  # Player is on the right
+	elif player and player.has_method("player") and player.global_position.x > global_position.x:  # Player is on the right
 		animated_sprite.play("attack_side")
 		animated_sprite.flip_h = false
 
@@ -102,7 +102,7 @@ func take_damage(damage):
 	
 	# Apply knockback
 	if player and player.has_method("player"):
-		var knockback_direction = (position - player.position).normalized()
+		var knockback_direction = (global_position - player.global_position).normalized()
 		velocity = knockback_direction * knockback_speed
 		knockback_applied = true
 		
@@ -127,3 +127,6 @@ func get_attack_duration():
 	return attack_duration
 func enemy():
 	pass
+
+func _ready():
+	player = get_tree().get_nodes_in_group("player")[0]  # Initialize player reference

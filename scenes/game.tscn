@@ -102,7 +102,7 @@ draw_limits = true
 follow_viewport_enabled = true
 
 [node name="barrel" parent="." instance=ExtResource("7_lb22a")]
-position = Vector2(724, -129)
+position = Vector2(742, 399)
 
 [node name="goblin" parent="." instance=ExtResource("7_v5eeg")]
 position = Vector2(948, 90)
@@ -113,7 +113,8 @@ position = Vector2(161, -17)
 [node name="EnemySpawner" type="Node2D" parent="."]
 position = Vector2(3, 5)
 script = ExtResource("9_vjejc")
-enemy_scene = ExtResource("7_v5eeg")
+goblin_scene = ExtResource("7_v5eeg")
+barrel_scene = ExtResource("7_lb22a")
 
 [node name="tower" parent="." instance=ExtResource("10_c5g3b")]
 position = Vector2(567, 193)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://dmaghkij68ie"]
+[gd_scene load_steps=27 format=3 uid="uid://dmaghkij68ie"]
 
 [ext_resource type="Script" path="res://scripts/barrel.gd" id="1_1ksnr"]
 [ext_resource type="Texture2D" uid="uid://dvg5ybqeicsnv" path="res://assets/Tiny Swords (Update 010)/Factions/Goblins/Troops/Barrel/Red/Barrel_Red.png" id="1_6alld"]
@@ -156,7 +156,10 @@ height = 66.0
 radius = 732.301
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_t10pe"]
-radius = 44.7214
+radius = 73.1095
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ktl2o"]
+radius = 93.086
 
 [node name="barrel" type="CharacterBody2D"]
 motion_mode = 1
@@ -195,5 +198,12 @@ shape = SubResource("CircleShape2D_20qtg")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hitboxb"]
 shape = SubResource("CircleShape2D_t10pe")
 
+[node name="explosion_area" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="explosion_area"]
+shape = SubResource("CircleShape2D_ktl2o")
+
 [connection signal="body_entered" from="detectionb" to="." method="_on_detectionb_body_entered"]
 [connection signal="body_exited" from="detectionb" to="." method="_on_detectionb_body_exited"]
+[connection signal="area_entered" from="hitboxb" to="." method="_on_hitboxb_area_entered"]
+[connection signal="area_entered" from="explosion_area" to="." method="_on_explosion_area_area_entered"]

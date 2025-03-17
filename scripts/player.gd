@@ -56,6 +56,11 @@ func _physics_process(delta):
 				take_damage(10)
 				area.get_parent().attack_timer = 0.0  # Reset attack timer
 
+		# Check if the area is from a barrel
+		if area.is_in_group("barrel_explosion"):
+			take_damage(50)
+			area.get_parent().queue_free()  # Remove the barrel
+
 	#Animations
 	if Input.is_action_just_pressed("attack1") and !attacking:
 		attack()
