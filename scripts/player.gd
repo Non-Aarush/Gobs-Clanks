@@ -43,7 +43,7 @@ func _physics_process(delta):
 	elif direction.x > 0:
 		facing_direction = "right"
 		
-	#Player movements
+	# Player movements
 	velocity.x = move_toward(velocity.x, direction.x * speed, acceleration)
 	velocity.y = move_toward(velocity.y, direction.y * speed, acceleration)
 
@@ -61,7 +61,7 @@ func _physics_process(delta):
 			take_damage(50)
 			area.get_parent().queue_free()  # Remove the barrel
 
-	#Animations
+	# Animations
 	if Input.is_action_just_pressed("attack1") and !attacking:
 		attack()
 
@@ -107,8 +107,16 @@ func take_damage(damage):
 	if health <= 0:
 		death()
 
+func cleanup_scene():
+	# Iterate through all children of the root node and free goblins/barrels.
+	for child in get_tree().get_root().get_children():
+		if child.has_method("enemy"):
+			print("Freeing lingering node: ", child.name)  # Debug message for cleanup.
+			child.queue_free()  # Free the node.
+
 func death():
-	await get_tree().create_timer(0.1).timeout
+	cleanup_scene()  # Ensure lingering nodes are freed before changing scenes.
+	await get_tree().create_timer(0.1).timeout 
 	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
 	queue_free()
 

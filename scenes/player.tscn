@@ -406,10 +406,8 @@ script = ExtResource("1_1ju3j")
 texture_filter = 1
 position = Vector2(0, -36)
 sprite_frames = SubResource("SpriteFrames_6n1jf")
-animation = &"idle"
+animation = &"attack2"
 autoplay = "idle"
-frame = 2
-frame_progress = 0.0235202
 speed_scale = 2.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

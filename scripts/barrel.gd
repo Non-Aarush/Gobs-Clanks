@@ -55,7 +55,7 @@ func start_explosion():
 		if area.name == "playerhitbox":
 			var player = area.get_parent()  # Get the player node
 			if player.has_method("take_damage"):  # Ensure player has take_damage method
-				player.take_damage(50)
+				player.take_damage(50,)
 				apply_knockback(player)
 	
 	var sprite_frames = animated_sprite.sprite_frames
@@ -99,3 +99,5 @@ func _on_explosion_area_area_entered(area: Area2D):
 func _on_explosion_area_area_exited(area: Area2D):
 	if area.name == "playerhitbox":
 		pass  # You can add logic here if needed
+func enemy():
+	pass
