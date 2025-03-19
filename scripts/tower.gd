@@ -8,28 +8,53 @@ extends StaticBody2D
 var health_max = 5000
 var health_min = 0
 
+# Flag to track if the tower is in ruin state
+var is_ruined: bool = false
+
 func _process(delta):
 	if stopwatch and stopwatch.time_left <= 1 and stopwatch.is_running == true:
-		animated_sprite.animation = "idle"
-		remove_child(health_bar)  # Remove the healthbar progress bar from the scene tree
+		# Only change animation to "idle" if the tower is not ruined
+		if not is_ruined:
+			animated_sprite.animation = "idle"
+			
+			# Check if health_bar is valid and inside the scene tree before removing it
+			if health_bar and health_bar.is_inside_tree():
+				remove_child(health_bar)  # Remove the healthbar progress bar from the scene tree
 
 func take_damage(amount):
 	health = clamp(health - amount, health_min, health_max)
-	health_bar.value = health  # Update the healthbar value
+	if health_bar and health_bar.is_inside_tree():  # Ensure health_bar exists before accessing it
+		health_bar.value = health  # Update the healthbar value
 	print("Tower health: ", health)  # For debugging
+	
+	# If tower's health reaches zero, change its state to ruin
 	if health <= 0:
-		queue_free()  # Or add destruction logic
+		is_ruined = true  # Set ruin state flag
+		animated_sprite.animation = "ruin"  # Change animation to ruin
+		
+		# Remove the health bar from the scene tree
+		if health_bar and health_bar.is_inside_tree():
+			remove_child(health_bar)
+			health_bar.queue_free()  # Free the node to prevent memory leaks
+		
+		GameManager.remove_coins(10)  # Deduct coins or add destruction logic
 
 func _on_tower_area_area_entered(area: Area2D):
 	if area.get_parent().has_method("player"):
 		stopwatch.start()
-		if not has_node("health_bar"):  # Check if health_bar node exists
+		
+		# Only create a new health bar if it doesn't exist and the tower isn't ruined
+		if not has_node("health_bar") and not is_ruined:
+			print("Creating new Health Bar")  # Debugging output
 			health_bar = ProgressBar.new()  # Create a new ProgressBar if it doesn't exist
 			health_bar.name = "health_bar"  # Set its name
 			health_bar.max_value = health_max  # Set its max value
 			health_bar.value = health  # Set its initial value
 			add_child(health_bar)  # Add it as a child of the tower
-		health_bar.visible = true  # Show the healthbar progress bar when the stopwatch starts
+		
+		if health_bar and not is_ruined:  # Ensure valid instance before modifying visibility
+			print("Showing Health Bar.")  # Debugging output
+			health_bar.visible = true  # Show the healthbar progress bar when the stopwatch starts
 
 func tower():
 	pass

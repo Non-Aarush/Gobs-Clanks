@@ -1,9 +1,11 @@
-[gd_scene load_steps=58 format=3 uid="uid://crlyadhqw5j4k"]
+[gd_scene load_steps=60 format=3 uid="uid://crlyadhqw5j4k"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_1ju3j"]
 [ext_resource type="Texture2D" uid="uid://vtgm5ovgctik" path="res://assets/Tiny Swords (Update 010)/Factions/Knights/Troops/Blue/Warrior_Blue.png" id="1_rd4nl"]
 [ext_resource type="Script" path="res://scripts/sword.gd" id="3_65ruv"]
 [ext_resource type="PackedScene" uid="uid://h3hxvoqmdgwe" path="res://scenes/health_bar.tscn" id="4_2jqyk"]
+[ext_resource type="Script" path="res://scripts/abilities/Dash.gd" id="5_4k043"]
+[ext_resource type="Script" path="res://scripts/abilities/invis.gd" id="6_fub8q"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8swfe"]
 atlas = ExtResource("1_rd4nl")
@@ -450,6 +452,12 @@ offset_left = -39.0
 offset_top = -99.0
 offset_right = 44.0
 offset_bottom = -88.0
+
+[node name="Dash" type="Node2D" parent="."]
+script = ExtResource("5_4k043")
+
+[node name="Invis" type="Node2D" parent="."]
+script = ExtResource("6_fub8q")
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="area_entered" from="playerhitbox" to="." method="_on_playerhitbox_area_entered"]

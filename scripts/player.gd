@@ -119,6 +119,10 @@ func death():
 	await get_tree().create_timer(0.1).timeout 
 	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
 	queue_free()
+	GameManager.remove_coins(2)
+
+var player_enabled : bool = true 
+
 
 func player():
 	pass

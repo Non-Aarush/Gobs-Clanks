@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://cp1x2t3f1hrgx"]
+[gd_scene load_steps=12 format=3 uid="uid://cp1x2t3f1hrgx"]
 
 [ext_resource type="Texture2D" uid="uid://naaiq6alxbd2" path="res://assets/Tiny Swords (Update 010)/Factions/Knights/Buildings/Tower/Tower_Construction.png" id="1_ooar8"]
 [ext_resource type="Script" path="res://scripts/tower.gd" id="1_uqlgw"]
 [ext_resource type="Texture2D" uid="uid://dghy0is1de3eq" path="res://Tower_Gray.png" id="2_f24y2"]
 [ext_resource type="PackedScene" uid="uid://h3hxvoqmdgwe" path="res://scenes/health_bar.tscn" id="4_75dhm"]
+[ext_resource type="Texture2D" uid="uid://d3t8y53ah4s7l" path="res://assets/Tiny Swords (Update 010)/Factions/Knights/Buildings/Tower/Tower_Destroyed.png" id="4_cwf5w"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_55k2w"]
 atlas = ExtResource("1_ooar8")
@@ -11,6 +12,10 @@ region = Rect2(0, 0, 128, 256)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xubgf"]
 atlas = ExtResource("2_f24y2")
+region = Rect2(0, 0, 128, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jcqtl"]
+atlas = ExtResource("4_cwf5w")
 region = Rect2(0, 0, 128, 256)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ndpm6"]
@@ -30,6 +35,14 @@ animations = [{
 "loop": true,
 "name": &"idle",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jcqtl")
+}],
+"loop": true,
+"name": &"ruin",
+"speed": 5.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nxgbi"]
@@ -44,7 +57,7 @@ script = ExtResource("1_uqlgw")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." groups=["tower"]]
 sprite_frames = SubResource("SpriteFrames_ndpm6")
-animation = &"construction"
+animation = &"ruin"
 autoplay = "construction"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

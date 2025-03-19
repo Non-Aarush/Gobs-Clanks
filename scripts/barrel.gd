@@ -89,6 +89,7 @@ func _on_detectionb_body_exited(body):
 func _on_hitboxb_area_entered(area: Area2D):
 	if area.is_in_group("sword"):  # Check if the entering area is in the "sword" group
 		start_explosion()
+		GameManager.add_coins(4)
 
 func _on_explosion_area_area_entered(area: Area2D):
 	if area.name == "playerhitbox" and is_explosion_active:  # Check if the entering area is named "playerhitbox" and explosion is active

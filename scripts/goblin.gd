@@ -118,6 +118,7 @@ func take_damage(damage):
 
 func death():
 	queue_free()
+	GameManager.add_coins(2)
 	get_tree().get_nodes_in_group("EnemySpawner")[0].decrement_enemy_count()
 
 func get_attack_timer():

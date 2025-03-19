@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://djjkew0bbx6i3"]
+
+[ext_resource type="Script" path="res://scripts/coin_display.gd" id="1_10qa0"]
+[ext_resource type="Texture2D" uid="uid://cpxqulhhd6tv4" path="res://assets/Tiny Swords (Update 010)/Resources/Resources/G_Idle_(NoShadow).png" id="2_nb6nx"]
+[ext_resource type="FontFile" uid="uid://bqhml3nv7l2pk" path="res://GravityBold8.ttf" id="3_q2mwx"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource("1_10qa0")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="CoinIcon" type="TextureRect" parent="Control"]
+layout_mode = 0
+offset_left = -21.0
+offset_top = -29.0
+offset_right = 107.0
+offset_bottom = 99.0
+texture = ExtResource("2_nb6nx")
+
+[node name="CoinLabel" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 84.0
+offset_top = 40.0
+offset_right = 172.0
+offset_bottom = 60.0
+theme_override_fonts/font = ExtResource("3_q2mwx")
+text = "0"

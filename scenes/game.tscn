@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://cr1mkca2indft"]
+[gd_scene load_steps=16 format=4 uid="uid://cr1mkca2indft"]
 
 [ext_resource type="PackedScene" uid="uid://crlyadhqw5j4k" path="res://scenes/player.tscn" id="1_ud5rb"]
 [ext_resource type="TileSet" uid="uid://bw1kg4h7fvtij" path="res://MAin.tres" id="2_725pc"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="5_i3k3e"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="6_nh3yo"]
 [ext_resource type="PackedScene" uid="uid://t0xnyq37pdp8" path="res://scenes/stopwatch.tscn" id="6_u0jf1"]
+[ext_resource type="PackedScene" uid="uid://djjkew0bbx6i3" path="res://scenes/CoinDisplay.tscn" id="7_ednxt"]
 [ext_resource type="PackedScene" uid="uid://dmaghkij68ie" path="res://scenes/barrel.tscn" id="7_lb22a"]
 [ext_resource type="PackedScene" uid="uid://cs5oe5vpt436k" path="res://scenes/goblin.tscn" id="7_v5eeg"]
 [ext_resource type="Script" path="res://scripts/enemy_spawner.gd" id="9_vjejc"]
@@ -100,6 +101,8 @@ draw_limits = true
 
 [node name="stopwatch" parent="." instance=ExtResource("6_u0jf1")]
 follow_viewport_enabled = true
+
+[node name="CanvasLayer" parent="." instance=ExtResource("7_ednxt")]
 
 [node name="barrel" parent="." instance=ExtResource("7_lb22a")]
 position = Vector2(742, 399)

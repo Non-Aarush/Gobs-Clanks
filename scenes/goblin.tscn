@@ -315,7 +315,6 @@ shape = SubResource("CircleShape2D_7weus")
 [node name="detection" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="detection"]
-visible = false
 shape = SubResource("CircleShape2D_ftc1u")
 
 [node name="attack_zone" type="Area2D" parent="."]
