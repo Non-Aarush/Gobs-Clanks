@@ -4,6 +4,7 @@ extends CanvasLayer
 
 var time_left = 30.0
 var is_running = false
+var current_music_type = -1  # Track current music type to avoid unnecessary replays
 
 func _process(delta):
 	if is_running and time_left > 0:
@@ -11,18 +12,17 @@ func _process(delta):
 		update_timer_label()
 	elif time_left <= 0:
 		time_left = 0
-		update_timer_label()
+		is_running = false
 	
 	update_label_position()
-	update_visibility()  # Update visibility based on state
+	update_visibility()
+	update_music()
 
 func update_timer_label():
 	var minutes = int(time_left / 60)
 	var seconds = int(fmod(time_left, 60))
 	
-	var time_string = "%02d:%02d" % [minutes, seconds]
-	
-	stopwatch_label.text = time_string
+	stopwatch_label.text = "%02d:%02d" % [minutes, seconds]
 
 func update_label_position():
 	stopwatch_label.position = Vector2(
@@ -31,10 +31,14 @@ func update_label_position():
 	)
 
 func update_visibility():
-	if is_running and time_left > 0:
-		stopwatch_label.visible = true  # Show the timer while it's running
-	else:
-		stopwatch_label.visible = false  # Hide the timer otherwise
+	stopwatch_label.visible = is_running and time_left > 0
+
+func update_music():
+	var target_music = 2 if stopwatch_label.visible else 1
+	
+	if target_music != current_music_type:  # Only switch if different
+		current_music_type = target_music
+		AudioManager.play_background_music(current_music_type)  
 
 func start():
 	is_running = true
