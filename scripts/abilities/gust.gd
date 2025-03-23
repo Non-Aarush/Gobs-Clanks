@@ -11,6 +11,7 @@ var can_use_ability: bool = true  # Tracks whether the ability can be used
 func _process(delta):
 	if Input.is_action_just_pressed("gust") and can_use_ability:
 		activate_ability()
+		AudioManager.play_sound_effect("gust")
 
 func activate_ability():
 	print("Activating Wind Gust!")  # Debug message

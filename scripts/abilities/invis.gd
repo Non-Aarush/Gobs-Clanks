@@ -24,6 +24,7 @@ func _ready():
 func _process(delta):
 	if Input.is_action_just_pressed("invis") and can_use_ability:
 		activate_invisibility()
+		AudioManager.play_sound_effect("invis")
 
 func activate_invisibility():
 	if not player_sprite or not collision_shape:

@@ -25,6 +25,7 @@ func _process(delta):
 	# Check for input to activate the healing aura
 	if Input.is_action_just_pressed("heal") and can_use_ability:
 		activate_healing_aura()
+		AudioManager.play_sound_effect("heal")
 
 func activate_healing_aura():
 	if not can_use_ability or not player or not health_bar:

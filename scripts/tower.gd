@@ -16,10 +16,10 @@ func _process(delta):
 		# Only change animation to "idle" if the tower is not ruined
 		if not is_ruined:
 			animated_sprite.animation = "idle"
-			
 			# Check if health_bar is valid and inside the scene tree before removing it
 			if health_bar and health_bar.is_inside_tree():
-				remove_child(health_bar)  # Remove the healthbar progress bar from the scene tree
+				remove_child(health_bar) 
+				AudioManager.play_sound_effect("timer_started") 
 
 func take_damage(amount):
 	health = clamp(health - amount, health_min, health_max)
@@ -31,7 +31,7 @@ func take_damage(amount):
 	if health <= 0:
 		is_ruined = true  # Set ruin state flag
 		animated_sprite.animation = "ruin"  # Change animation to ruin
-		
+		AudioManager.play_sound_effect("ruin")
 		# Remove the health bar from the scene tree
 		if health_bar and health_bar.is_inside_tree():
 			remove_child(health_bar)

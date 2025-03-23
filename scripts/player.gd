@@ -64,6 +64,7 @@ func _physics_process(delta):
 	# Animations
 	if Input.is_action_just_pressed("attack1") and !attacking:
 		attack()
+		AudioManager.play_sound_effect("attack")
 
 	elif Input.is_action_pressed("ui_right") or Input.is_action_pressed("ui_left") or Input.is_action_pressed("ui_up") or Input.is_action_pressed("ui_down"):
 		idle = false
@@ -101,6 +102,7 @@ func disable_sword_collisions():
 	$sword/CollisionShape2D4.disabled=true
 
 func take_damage(damage):
+	AudioManager.play_sound_effect("hit")
 	health -= damage
 	health_bar.value = health
 	

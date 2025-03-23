@@ -36,7 +36,7 @@ func start_explosion():
 	reached_tower = true
 	velocity = Vector2.ZERO
 	animated_sprite.play("explo")
-	
+	AudioManager.play_sound_effect("explo")
 	# Damage the tower only if it's in contact
 	if is_touching_tower():
 		if is_instance_valid(tower) and tower.has_method("take_damage"):

@@ -28,6 +28,7 @@ func _process(delta):
 
 	if Input.is_action_just_pressed("dash") and can_dash and not is_dashing:
 		perform_dash()
+		AudioManager.play_sound_effect("dash")
 
 func perform_dash():
 	var player = get_parent()  # Assuming this script is a child of the player node

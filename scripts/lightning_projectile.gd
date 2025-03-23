@@ -26,6 +26,7 @@ func _ready():
 func _process(delta):
 	if Input.is_action_just_pressed("strike") and can_use_ability and not is_ability_active and not input_disabled:
 		activate_ability()
+		AudioManager.play_sound_effect("lightning")
 
 	if active_projectile and is_instance_valid(active_projectile) and target_enemy and is_instance_valid(target_enemy):
 		move_projectile_towards_enemy(delta)
