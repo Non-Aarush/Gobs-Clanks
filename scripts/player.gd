@@ -8,8 +8,8 @@ var idle = true
 var attacking = false
 var attack_timer = 0.0 # Timer to track the attack animation duration
 var facing_direction = "down" # Default facing direction
-@export var health = 500
-@export var health_max = 500
+@export var health = 900
+@export var health_max = 900
 @export var health_min = 0
 
 # Node paths (Assign in editor)

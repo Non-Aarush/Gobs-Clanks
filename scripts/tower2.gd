@@ -2,7 +2,7 @@ extends StaticBody2D
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var collision_shape: CollisionShape2D = $CollisionShape2D
-@onready var stopwatch: Node = get_node("/root/Game/stopwatch")  # Adjust path as necessary
+@onready var stopwatch: Node = get_node("/root/Level2/stopwatch")  # Adjust path as necessary
 @onready var health_bar: ProgressBar = $health_bar  # Assuming this is your health bar progress bar
 
 @export var health = 8000

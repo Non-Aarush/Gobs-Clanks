@@ -3,6 +3,7 @@ extends Node
 @onready var music_player: AudioStreamPlayer = $MusicPlayer
 @onready var sfx_player: AudioStreamPlayer = $SFXPlayer
 @onready var ruin_player: AudioStreamPlayer = $RuinPlayer
+
 # Preload music files once (better performance)
 var music_files = {
 	1: preload("res://background1.ogg"),  # Replace with actual path
@@ -13,10 +14,10 @@ var current_music_type: int = -1  # Track currently playing music
 
 func _ready():
 	play_background_music(1)  # Start with background music type 1
-	sfx_player.volume_db = 15.0
-	ruin_player.volume_db = 5  # Set SFX volume to +6 dB (increase as needed)
+	sfx_player.volume_db = 5.0
+	ruin_player.volume_db = -5.0
 
-# Function to play background music
+# Function to play background music (with looping)
 func play_background_music(type: int):
 	if type == current_music_type:
 		return  # Avoid restarting the same track
@@ -25,13 +26,19 @@ func play_background_music(type: int):
 		print("Error: Music type", type, "not found!")  # Debugging message
 		return
 	
-	music_player.stream = music_files[type]  
+	var stream = music_files[type]
+	
+	# Enable looping for OGG files
+	if stream is AudioStreamOggVorbis:
+		stream.loop = true  # Set looping for the loaded stream
+	
+	music_player.stream = stream
 	current_music_type = type  # Update current playing track
 	
 	if music_player.is_playing():
 		music_player.stop()  # Stop current music before switching
 	
-	music_player.play()
+	music_player.play()  # Play the new track (now looped)
 
 func play_sound_effect(effect_name: String):
 	match effect_name:
