@@ -2,7 +2,7 @@ extends Node2D
 
 @export var goblin_scene: PackedScene  # Load the goblin scene as a packed scene
 @export var barrel_scene: PackedScene  # Load the barrel scene as a packed scene
-@onready var stopwatch: Node = get_node("/root/Level2/stopwatch")  # Reference to the stopwatch node
+@onready var stopwatch: Node = get_node("/root/Level3/stopwatch")  # Reference to the stopwatch node
 @onready var stopwatch_label = stopwatch.get_node("stopwatchlabel")  # Reference to the stopwatch label
 var player = null  # Reference to the player node
 var tower = null  # Reference to the tower node
@@ -12,7 +12,7 @@ var current_goblins = 0  # Current number of active goblins
 var max_barrels = 8  # Maximum number of active barrels
 var current_barrels = 0  # Current number of active barrels
 var goblin_spawn_interval = 3.5  # Reduced spawn interval for faster spawning
-var barrel_spawn_interval = 3.5  # Longer interval for barrels
+var barrel_spawn_interval = 5.0  # Longer interval for barrels
 var goblin_spawn_timer = goblin_spawn_interval  # Initialize spawn timer
 var barrel_spawn_timer = barrel_spawn_interval  # Initialize spawn timer
 var initial_delay = 0.5  # Initial delay
