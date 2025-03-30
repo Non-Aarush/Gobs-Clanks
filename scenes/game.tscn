@@ -13,14 +13,14 @@
 [ext_resource type="Script" path="res://scripts/enemy_spawner.gd" id="9_vjejc"]
 [ext_resource type="PackedScene" uid="uid://cp1x2t3f1hrgx" path="res://scenes/tower.tscn" id="10_c5g3b"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_drooq"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1p8n7"]
 texture = ExtResource("5_fr6st")
 texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_p2nu2"]
 tile_size = Vector2i(64, 64)
-sources/0 = SubResource("TileSetAtlasSource_drooq")
+sources/0 = SubResource("TileSetAtlasSource_1p8n7")
 
 [sub_resource type="Resource" id="Resource_k3ctp"]
 script = ExtResource("6_nh3yo")

@@ -14,14 +14,14 @@
 [ext_resource type="PackedScene" uid="uid://cp1x2t3f1hrgx" path="res://scenes/tower.tscn" id="12_ya2vv"]
 [ext_resource type="Script" path="res://scripts/tower4.gd" id="13_tijl1"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_drooq"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1p8n7"]
 texture = ExtResource("2_ko36d")
 texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_p2nu2"]
 tile_size = Vector2i(64, 64)
-sources/0 = SubResource("TileSetAtlasSource_drooq")
+sources/0 = SubResource("TileSetAtlasSource_1p8n7")
 
 [sub_resource type="Resource" id="Resource_bc3ud"]
 script = ExtResource("5_j4b3n")
