@@ -2,7 +2,7 @@ extends CanvasLayer
 
 @onready var stopwatch_label = $stopwatchlabel
 
-var time_left = 180.0
+var time_left = 300.0
 var is_running = false
 var current_music_type = -1  # Track current music type to avoid unnecessary replays
 
