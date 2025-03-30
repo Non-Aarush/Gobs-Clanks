@@ -1,8 +1,8 @@
 extends Node2D  # Ensure this script extends Node2D
 
 @export var healing_amount: int = 28  # Amount of health to heal per second
-@export var healing_duration: float = 4.0  # Duration of the healing aura in seconds
-@export var cooldown_duration: float = 30.0  # Cooldown duration in seconds
+@export var healing_duration: float = 7.0  # Duration of the healing aura in seconds
+@export var cooldown_duration: float = 20.0  # Cooldown duration in seconds
 @export var glow_color: Color = Color(0, 1, 0, 0.5)  # Green color for the glow effect
 
 var can_use_ability: bool = true  # Track if the ability can be used
@@ -45,7 +45,6 @@ func activate_healing_aura():
 		
 		heal_player(healing_amount)  # Heal the player by the specified amount
 		elapsed_time += 0.5  # Increment elapsed time by one second
-
 	deactivate_healing_aura()  # Deactivate the aura after healing
 
 func heal_player(amount: int):

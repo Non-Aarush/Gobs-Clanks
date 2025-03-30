@@ -7,7 +7,7 @@ extends Node2D
 var player = null
 var tower = null
 
-var max_goblins = 8
+var max_goblins = 20
 var current_goblins = 0
 var max_barrels = 8
 var current_barrels = 0

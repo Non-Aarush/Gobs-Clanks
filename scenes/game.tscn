@@ -58,11 +58,10 @@ tile_map_data = PackedByteArray("AAD8//z/AgAAAAAAAAD8//3/AgAAAAEAAAD8//7/AgAAAAI
 tile_set = ExtResource("2_725pc")
 
 [node name="stone2" type="TileMapLayer" parent="TileMap"]
-tile_map_data = PackedByteArray("AAAGAAAAAQAAAAMAAAAHAAAAAQACAAUAAAAIAP//AQACAAcAAAAJAP//AQACAAcAAAAKAP//AQACAAcAAAALAAAAAQAAAAUAAAAMAAMAAQAAAAMAAAANAAMAAQABAAMAAAAOAAMAAQACAAMAAAA=")
 tile_set = ExtResource("2_725pc")
 
 [node name="grass2" type="TileMapLayer" parent="TileMap"]
-tile_map_data = PackedByteArray("AAAGAP3/AgAAAAAAAAAGAP7/AgAAAAEAAAAGAP//AgAAAAIAAAAHAP//AgACAAIAAAAIAP7/AgABAAIAAAAJAP7/AgABAAEAAAAKAP7/AgABAAEAAAALAP//AgAAAAIAAAAMAP//AgABAAEAAAANAP//AgABAAEAAAAMAAAAAgAAAAEAAAAMAAEAAgAAAAEAAAAMAAIAAgAAAAIAAAANAAEAAgABAAEAAAANAAIAAgABAAIAAAAOAAIAAgACAAIAAAAOAAEAAgACAAEAAAAOAAAAAgACAAEAAAAOAP//AgACAAEAAAAOAP7/AgACAAEAAAAOAP3/AgACAAEAAAAOAPz/AgACAAAAAAANAPz/AgABAAAAAAAMAPz/AgABAAAAAAALAPz/AgABAAAAAAAKAPz/AgABAAAAAAAJAPz/AgAAAAAAAAAHAP3/AgABAAAAAAAIAP3/AgABAAAAAAAHAP7/AgABAAEAAAAJAP3/AgABAAEAAAAKAP3/AgABAAEAAAALAP3/AgABAAEAAAALAP7/AgABAAEAAAAMAP3/AgABAAEAAAAMAP7/AgABAAEAAAANAP3/AgABAAEAAAANAP7/AgABAAEAAAANAAAAAgABAAEAAAD7/wcAFwAAAAAAAAASAPv/DgAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAD7/wcAFwAAAAAAAAASAPv/DgAAAAAAAAA=")
 tile_set = ExtResource("2_725pc")
 
 [node name="tree" type="TileMapLayer" parent="TileMap"]
@@ -104,11 +103,8 @@ follow_viewport_enabled = true
 
 [node name="CanvasLayer" parent="." instance=ExtResource("7_ednxt")]
 
-[node name="barrel" parent="." instance=ExtResource("7_lb22a")]
-position = Vector2(742, 399)
-
 [node name="goblin" parent="." instance=ExtResource("7_v5eeg")]
-position = Vector2(948, 90)
+position = Vector2(308, 169)
 
 [node name="player" parent="." instance=ExtResource("1_ud5rb")]
 position = Vector2(161, -17)
@@ -120,4 +116,4 @@ goblin_scene = ExtResource("7_v5eeg")
 barrel_scene = ExtResource("7_lb22a")
 
 [node name="tower" parent="." instance=ExtResource("10_c5g3b")]
-position = Vector2(567, 193)
+position = Vector2(767, 67)

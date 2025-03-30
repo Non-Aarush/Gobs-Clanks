@@ -104,11 +104,32 @@ follow_viewport_enabled = true
 
 [node name="CanvasLayer" parent="." instance=ExtResource("7_4s3f5")]
 
-[node name="barrel" parent="." instance=ExtResource("8_26l1g")]
-position = Vector2(3072, -309)
-
 [node name="goblin" parent="." instance=ExtResource("9_qd7g5")]
-position = Vector2(1240, -158)
+position = Vector2(2924, 86)
+
+[node name="goblin9" parent="." instance=ExtResource("9_qd7g5")]
+position = Vector2(1172, 1250)
+
+[node name="goblin8" parent="." instance=ExtResource("9_qd7g5")]
+position = Vector2(2872, -638)
+
+[node name="goblin7" parent="." instance=ExtResource("9_qd7g5")]
+position = Vector2(1248, -566)
+
+[node name="goblin6" parent="." instance=ExtResource("9_qd7g5")]
+position = Vector2(492, -654)
+
+[node name="goblin5" parent="." instance=ExtResource("9_qd7g5")]
+position = Vector2(-332, -374)
+
+[node name="goblin4" parent="." instance=ExtResource("9_qd7g5")]
+position = Vector2(3400, -1226)
+
+[node name="goblin3" parent="." instance=ExtResource("9_qd7g5")]
+position = Vector2(-928, 386)
+
+[node name="goblin2" parent="." instance=ExtResource("9_qd7g5")]
+position = Vector2(1232, -1486)
 
 [node name="player" parent="." instance=ExtResource("10_vit7e")]
 position = Vector2(-921, -664)

@@ -1,30 +1,29 @@
 extends Node2D
 
-@export var goblin_scene: PackedScene  # Load the goblin scene as a packed scene
-@export var barrel_scene: PackedScene  # Load the barrel scene as a packed scene
-@onready var stopwatch: Node = get_node("/root/Level3/stopwatch")  # Reference to the stopwatch node
-@onready var stopwatch_label = stopwatch.get_node("stopwatchlabel")  # Reference to the stopwatch label
-var player = null  # Reference to the player node
-var tower = null  # Reference to the tower node
+@export var goblin_scene: PackedScene
+@export var barrel_scene: PackedScene
+@onready var stopwatch: Node = get_node("/root/Level3/stopwatch")
+@onready var stopwatch_label = stopwatch.get_node("stopwatchlabel")
+var player = null
+var tower = null
 
-var max_goblins = 8  # Maximum number of active goblins
-var current_goblins = 0  # Current number of active goblins
-var max_barrels = 8  # Maximum number of active barrels
-var current_barrels = 0  # Current number of active barrels
-var goblin_spawn_interval = 3.5  # Reduced spawn interval for faster spawning
-var barrel_spawn_interval = 5.0  # Longer interval for barrels
-var goblin_spawn_timer = goblin_spawn_interval  # Initialize spawn timer
-var barrel_spawn_timer = barrel_spawn_interval  # Initialize spawn timer
-var initial_delay = 0.5  # Initial delay
+var max_goblins = 20
+var current_goblins = 0
+var max_barrels = 8
+var current_barrels = 0
+var goblin_spawn_interval = 3.5
+var barrel_spawn_interval = 5.0
+var goblin_spawn_timer = goblin_spawn_interval
+var barrel_spawn_timer = barrel_spawn_interval
+var initial_delay = 0.5
 var delay_timer = 0.0
-var stopwatch_started = false  # Flag to track if stopwatch has started
-var spawning_allowed = false  # Flag to control spawning
+var stopwatch_started = false
+var spawning_allowed = false
 
 func _ready():
 	add_to_group("EnemySpawner")
-	randomize()  # Initialize random number generator
+	randomize()
 
-	# Get player and tower references safely
 	var players = get_tree().get_nodes_in_group("player")
 	if players.size() > 0:
 		player = players[0]
@@ -37,19 +36,19 @@ func _ready():
 	else:
 		print("Error: No tower found in 'tower' group.")
 
-	print("EnemySpawner ready!")  # Debug message
+	print("EnemySpawner ready!")
 
 func _process(delta):
-	if stopwatch_label.visible:  # Check if stopwatch label is visible
-		if not stopwatch_started:  # If stopwatch just started
+	if stopwatch_label.visible:
+		if not stopwatch_started:
 			stopwatch_started = true
-			delay_timer = 0.0  # Reset delay timer
-			spawning_allowed = false  # Reset spawning allowance
+			delay_timer = 0.0
+			spawning_allowed = false
 		
 		delay_timer += delta
 		
 		if delay_timer >= initial_delay:
-			spawning_allowed = true  # Allow spawning after delay
+			spawning_allowed = true
 		
 		if spawning_allowed:
 			goblin_spawn_timer -= delta
@@ -62,9 +61,9 @@ func _process(delta):
 			if barrel_spawn_timer <= 0 and current_barrels < max_barrels:
 				spawn_barrel()
 				barrel_spawn_timer = barrel_spawn_interval
-	else:  # If stopwatch label is not visible
-		spawning_allowed = false  # Prevent further spawning
-		goblin_spawn_timer = goblin_spawn_interval  # Reset spawn timer
+	else:
+		spawning_allowed = false
+		goblin_spawn_timer = goblin_spawn_interval
 		barrel_spawn_timer = barrel_spawn_interval
 
 func spawn_goblin():
@@ -72,57 +71,46 @@ func spawn_goblin():
 		print("Error: Player not found.")
 		return
 	
-	var random_distance = randi() % 10 + 1  # Random distance between 1 and 10 tiles
-	var random_angle = randf_range(0, PI * 2)  # Random angle
+	var random_distance = randi() % 10 + 1
+	var random_angle = randf_range(0, PI * 2)
 	
 	var goblin_position = player.global_position + Vector2(
 		cos(random_angle) * random_distance * 16, 
 		sin(random_angle) * random_distance * 16
 	)
 	
-	if is_within_bounds(goblin_position):
-		var goblin_instance = goblin_scene.instantiate()
-		goblin_instance.position = goblin_position
-		
-		get_tree().get_root().add_child(goblin_instance)
-		
-		if not goblin_instance.is_in_group("enemies"):
-			goblin_instance.add_to_group("enemies")
-		
-		current_goblins += 1
-		print("Goblin spawned at position:", goblin_position)
-	else:
-		print("Goblin spawn position out of bounds.")
+	var goblin_instance = goblin_scene.instantiate()
+	goblin_instance.position = goblin_position
+	get_tree().get_root().add_child(goblin_instance)
+	
+	if not goblin_instance.is_in_group("enemies"):
+		goblin_instance.add_to_group("enemies")
+	
+	current_goblins += 1
+	print("Goblin spawned at position:", goblin_position)
 
 func spawn_barrel():
 	if tower == null:
 		print("Error: Tower not found.")
 		return
 	
-	var random_distance = randi() % 20 + 10   # Random distance between a farther range (10-30 tiles)
-	var random_angle = randf_range(0, PI * 2) 
+	var random_distance = randi() % 20 + 10
+	var random_angle = randf_range(0, PI * 2)
 	
 	var barrel_position = tower.global_position + Vector2(
 		cos(random_angle) * random_distance * 16,
 		sin(random_angle) * random_distance * 16
 	)
 	
-	if is_within_bounds(barrel_position):
-		var barrel_instance = barrel_scene.instantiate()
-		barrel_instance.position = barrel_position
-		
-		get_tree().get_root().add_child(barrel_instance)
-		
-		if not barrel_instance.is_in_group("enemies"):
-			barrel_instance.add_to_group("enemies")
-		
-		current_barrels += 1
+	var barrel_instance = barrel_scene.instantiate()
+	barrel_instance.position = barrel_position
+	get_tree().get_root().add_child(barrel_instance)
 	
-
-func is_within_bounds(position):
-	var viewport_size = get_viewport().size
-	return position.x > 0 and position.x < viewport_size.x and position.y > 0 and position.y < viewport_size.y
+	if not barrel_instance.is_in_group("enemies"):
+		barrel_instance.add_to_group("enemies")
+	
+	current_barrels += 1
 
 func decrement_enemy_count():
-	current_goblins -= max(0, current_goblins -1)
-	current_barrels -= max(0, current_barrels -1)
+	current_goblins = max(0, current_goblins - 1)
+	current_barrels = max(0, current_barrels - 1)

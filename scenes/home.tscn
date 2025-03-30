@@ -1,0 +1,36 @@
+[gd_scene load_steps=8 format=3 uid="uid://y0levgykdeam"]
+
+[ext_resource type="Texture2D" uid="uid://6121462h6wt1" path="res://home.png" id="1_mjcrn"]
+[ext_resource type="Script" path="res://scripts/control.gd" id="1_x67qm"]
+[ext_resource type="Script" path="res://scripts/home.gd" id="2_o0ex8"]
+[ext_resource type="Texture2D" uid="uid://cvjsnw5sx1ldu" path="res://assets/Tiny Swords (Update 010)/UI/Buttons/Button_Disable.png" id="2_yae8a"]
+[ext_resource type="Texture2D" uid="uid://bf7u8jmi7ehqw" path="res://mute.png" id="5_q3aeo"]
+[ext_resource type="Texture2D" uid="uid://bwnf78v7cyr03" path="res://unmute.png" id="6_bncar"]
+[ext_resource type="Script" path="res://scripts/mute.gd" id="6_p5k42"]
+
+[node name="Home" type="CanvasLayer"]
+script = ExtResource("1_x67qm")
+
+[node name="HomeButton" type="TextureButton" parent="."]
+texture_filter = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 40.0
+grow_horizontal = 0
+texture_normal = ExtResource("1_mjcrn")
+texture_pressed = ExtResource("2_yae8a")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("2_o0ex8")
+
+[node name="SoundButton" type="TextureButton" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+action_mode = 0
+texture_normal = ExtResource("5_q3aeo")
+texture_pressed = ExtResource("6_bncar")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("6_p5k42")

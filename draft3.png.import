@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dcym0g4ourhkp"
-path="res://.godot/imported/slime_run.png-d42f97914f471ef36f8d91b11aecdc9e.ctex"
+uid="uid://bg5cv7tuvr7l0"
+path="res://.godot/imported/draft3.png-a482837c86fdaa9f2bd3c48f03c61d27.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/free-slime-enemy/FreeSlime/slime_run.png"
-dest_files=["res://.godot/imported/slime_run.png-d42f97914f471ef36f8d91b11aecdc9e.ctex"]
+source_file="res://draft3.png"
+dest_files=["res://.godot/imported/draft3.png-a482837c86fdaa9f2bd3c48f03c61d27.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dkwoj7o0e6emk"
-path="res://.godot/imported/16x16 knight 1 v3.png-0dbff7c87c9a4112d9054b4804a5ed17.ctex"
+uid="uid://b7b01t5x2muj1"
+path="res://.godot/imported/level3.png-2dfb66d3070d41feeb4781d62074bff8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/animated-knight-character-pack/16x16 knight 1 v3.png"
-dest_files=["res://.godot/imported/16x16 knight 1 v3.png-0dbff7c87c9a4112d9054b4804a5ed17.ctex"]
+source_file="res://level3.png"
+dest_files=["res://.godot/imported/level3.png-2dfb66d3070d41feeb4781d62074bff8.ctex"]
 
 [params]
 

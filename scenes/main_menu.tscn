@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dopnsgso3glhf"]
+[gd_scene load_steps=8 format=3 uid="uid://dopnsgso3glhf"]
 
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_xbqnt"]
 [ext_resource type="Texture2D" uid="uid://f7ipavdktikn" path="res://image_2025-02-15_204305849.jpg" id="2_hvtfd"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://4ugj37yl4jy8" path="res://Button_Blue.png" id="3_34ufe"]
 [ext_resource type="Texture2D" uid="uid://ciw66gs3xka0w" path="res://assets/Tiny Swords (Update 010)/UI/Buttons/Button_Red_Pressed.png" id="5_48hri"]
 [ext_resource type="Texture2D" uid="uid://dlbjtkkkqxcy5" path="res://Button_Red.png" id="5_uemln"]
+[ext_resource type="Texture2D" uid="uid://n3pbqticc422" path="res://logo.png" id="7_8w5dk"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -23,30 +24,43 @@ position = Vector2(17.5, -3.99995)
 scale = Vector2(3.02336, 2.81365)
 texture = ExtResource("2_hvtfd")
 
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = -664.0
+offset_top = -540.0
+offset_right = 648.0
+offset_bottom = 196.0
+texture = ExtResource("7_8w5dk")
+
 [node name="Start" type="TextureButton" parent="."]
 texture_filter = 1
 layout_mode = 1
 anchors_preset = -1
-offset_left = -85.0
-offset_top = -129.0
-offset_right = -21.0
-offset_bottom = -65.0
+offset_left = -81.0
+offset_top = 83.0
+offset_right = -34.0
+offset_bottom = 128.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(3.08715, 2.8518)
 texture_normal = ExtResource("3_34ufe")
 texture_pressed = ExtResource("3_7n5qs")
+ignore_texture_size = true
+stretch_mode = 0
 
 [node name="Quit" type="TextureButton" parent="."]
 texture_filter = 1
 layout_mode = 0
-offset_left = -97.0
-offset_top = 84.0
-offset_right = -33.0
-offset_bottom = 148.0
+offset_left = 835.0
+offset_top = 380.0
+offset_right = 859.0
+offset_bottom = 405.0
 scale = Vector2(3.43862, 2.96963)
 texture_normal = ExtResource("5_uemln")
 texture_pressed = ExtResource("5_48hri")
+ignore_texture_size = true
+stretch_mode = 0
 
 [connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]

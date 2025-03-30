@@ -11,6 +11,7 @@ var music_files = {
 }
 
 var current_music_type: int = -1  # Track currently playing music
+var is_audio_enabled: bool = true   # Track whether audio is enabled
 
 func _ready():
 	play_background_music(1)  # Start with background music type 1
@@ -38,7 +39,23 @@ func play_background_music(type: int):
 	if music_player.is_playing():
 		music_player.stop()  # Stop current music before switching
 	
-	music_player.play()  # Play the new track (now looped)
+	if is_audio_enabled:
+		music_player.play()  # Play the new track (now looped)
+
+# Function to toggle audio on/off
+func toggle_audio():
+	is_audio_enabled = !is_audio_enabled  # Toggle audio state
+	if is_audio_enabled:
+		print("Audio enabled")
+		music_player.volume_db = 0  # Restore volume for music
+		sfx_player.volume_db = 0     # Restore volume for sound effects
+		ruin_player.volume_db = 0     # Restore volume for ruin sounds
+		play_background_music(current_music_type)  # Resume playing background music if needed
+	else:
+		print("Audio muted")
+		music_player.volume_db = -80  # Mute music by setting volume to -80 dB
+		sfx_player.volume_db = -80     # Mute sound effects by setting volume to -80 dB
+		ruin_player.volume_db = -80     # Mute ruin sounds by setting volume to -80 dB
 
 func play_sound_effect(effect_name: String):
 	match effect_name:
@@ -70,4 +87,5 @@ func play_sound_effect(effect_name: String):
 			ruin_player.stream = preload("res://music/ruin.wav")
 			ruin_player.play()
 
-	sfx_player.play()  # Play the sound effect
+	if is_audio_enabled:  # Only play sound effects if audio is enabled
+		sfx_player.play()  # Play the sound effect

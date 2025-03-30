@@ -5,8 +5,8 @@ extends StaticBody2D
 @onready var stopwatch: Node = get_node("/root/Level3/stopwatch")  # Adjust path as necessary
 @onready var health_bar: ProgressBar = $health_bar  # Assuming this is your health bar progress bar
 
-@export var health = 8000
-var health_max = 8000
+@export var health = 10000
+var health_max = 10000
 var health_min = 0
 
 # Flag to track if the tower is in ruin state
@@ -17,6 +17,8 @@ func _process(delta):
 		# Only change animation to "idle" if the tower is not ruined
 		if not is_ruined:
 			animated_sprite.animation = "idle"
+			check_level_cleared()  # Check if level can be marked as cleared
+			
 			# Check if health_bar is valid and inside the scene tree before removing it
 			if health_bar and health_bar.is_inside_tree():
 				remove_child(health_bar) 
@@ -64,5 +66,24 @@ func _on_tower_area_area_entered(area: Area2D):
 			print("Showing Health Bar.")  # Debugging output
 			health_bar.visible = true  # Show the health bar progress bar when the stopwatch starts
 
+func check_level_cleared():
+	var enemies_remaining = get_tree().get_nodes_in_group("enemies").size()
+	
+	if enemies_remaining == 0:
+		var level_number = get_current_level_number()
+		GameManager.clear_level(level_number)  # Call GameManager to mark level cleared
+
+func get_current_level_number() -> int:
+	var scene_name = get_tree().current_scene.name
+	
+	match scene_name:
+		"Game": return 1   # Main game scene named "Game"
+		"Level2": return 2       # Level named "Level2"
+		"Level3": return 3       # Level named "Level3"
+		"Level4": return 4       # Level named "Level4"
+		"Level5": return 5       # Level named "Level5"
+	
+	return -1             # Return -1 for invalid level names (shouldn't happen)
+
 func tower():
-	pass
+	pass 

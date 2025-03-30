@@ -1,7 +1,7 @@
 extends Node2D  # Ensure this script extends Node2D
 
 @export var invisibility_duration: float = 7.0  # Duration of invisibility in seconds
-@export var cooldown_duration: float = 20.0  # Cooldown duration in seconds
+@export var cooldown_duration: float = 15.0  # Cooldown duration in seconds
 
 var is_invisible: bool = false
 var can_use_ability: bool = true

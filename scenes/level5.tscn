@@ -94,11 +94,41 @@ follow_viewport_enabled = true
 
 [node name="CanvasLayer" parent="." instance=ExtResource("7_7rkew")]
 
-[node name="barrel" parent="." instance=ExtResource("8_4w25a")]
-position = Vector2(-809, -130)
-
 [node name="goblin" parent="." instance=ExtResource("9_oo0or")]
-position = Vector2(2165, 207)
+position = Vector2(1977, 362)
+
+[node name="goblin12" parent="." instance=ExtResource("9_oo0or")]
+position = Vector2(1223, 1243)
+
+[node name="goblin11" parent="." instance=ExtResource("9_oo0or")]
+position = Vector2(-1117, -49)
+
+[node name="goblin10" parent="." instance=ExtResource("9_oo0or")]
+position = Vector2(93, -553)
+
+[node name="goblin9" parent="." instance=ExtResource("9_oo0or")]
+position = Vector2(-990, 1734)
+
+[node name="goblin8" parent="." instance=ExtResource("9_oo0or")]
+position = Vector2(4634, 2552)
+
+[node name="goblin7" parent="." instance=ExtResource("9_oo0or")]
+position = Vector2(2003, 2961)
+
+[node name="goblin6" parent="." instance=ExtResource("9_oo0or")]
+position = Vector2(2931, 1158)
+
+[node name="goblin5" parent="." instance=ExtResource("9_oo0or")]
+position = Vector2(4467, 1487)
+
+[node name="goblin4" parent="." instance=ExtResource("9_oo0or")]
+position = Vector2(5419, -692)
+
+[node name="goblin3" parent="." instance=ExtResource("9_oo0or")]
+position = Vector2(4520, -88)
+
+[node name="goblin2" parent="." instance=ExtResource("9_oo0or")]
+position = Vector2(2560, -977)
 
 [node name="player" parent="." instance=ExtResource("10_hn8hb")]
 position = Vector2(1777, 832)

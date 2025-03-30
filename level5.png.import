@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cg7gvsi1057ko"
-path="res://.godot/imported/slime_idle.png-6d93af4323294084076145a542200b1d.ctex"
+uid="uid://cr1lksgvyv2bk"
+path="res://.godot/imported/level5.png-f7039b5f88c5a83232786f2fce832aec.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/free-slime-enemy/FreeSlime/slime_idle.png"
-dest_files=["res://.godot/imported/slime_idle.png-6d93af4323294084076145a542200b1d.ctex"]
+source_file="res://level5.png"
+dest_files=["res://.godot/imported/level5.png-f7039b5f88c5a83232786f2fce832aec.ctex"]
 
 [params]
 
