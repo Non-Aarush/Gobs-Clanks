@@ -161,7 +161,7 @@ radius = 73.1095
 [sub_resource type="CircleShape2D" id="CircleShape2D_ktl2o"]
 radius = 93.086
 
-[node name="barrel" type="CharacterBody2D"]
+[node name="barrel" type="CharacterBody2D" groups=["enemies"]]
 motion_mode = 1
 script = ExtResource("1_1ksnr")
 

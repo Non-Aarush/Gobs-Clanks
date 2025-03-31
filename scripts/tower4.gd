@@ -9,81 +9,94 @@ extends StaticBody2D
 var health_max = 10000
 var health_min = 0
 
-# Flag to track if the tower is in ruin state
+# Flags to track states
 var is_ruined: bool = false
+var is_idle: bool = false  # Track if tower is in idle state after timer runs out
 
 func _process(delta):
-	if stopwatch and stopwatch.time_left <= 1 and stopwatch.is_running:
-		# Only change animation to "idle" if the tower is not ruined
-		if not is_ruined:
-			animated_sprite.animation = "idle"
-			check_level_cleared()  # Check if level can be marked as cleared
-			
-			# Check if health_bar is valid and inside the scene tree before removing it
-			if health_bar and health_bar.is_inside_tree():
-				remove_child(health_bar) 
-				AudioManager.play_sound_effect("timer_started") 
+	# Check if tower is in idle state (after timer runs out)
+	if is_idle:
+		check_level_cleared()  # Continuously check level clearance
+	
+	# Check if timer is running and about to expire
+	if stopwatch and stopwatch.is_running:
+		if stopwatch.time_left <= 1:
+			# Enter idle state if not ruined
+			if not is_ruined and !is_idle:
+				enter_idle_state()
+		else:
+			is_idle = false  # Reset idle state if timer is still running
+
+func enter_idle_state():
+	animated_sprite.animation = "idle"
+	is_idle = true  # Enable continuous checks
+	print("Tower entered idle state.")
+	
+	# Remove health bar if present
+	if health_bar and health_bar.is_inside_tree():
+		remove_child(health_bar)
+		AudioManager.play_sound_effect("timer_started")
 
 func take_damage(amount):
 	health = clamp(health - amount, health_min, health_max)
-	if health_bar and health_bar.is_inside_tree():  # Ensure health_bar exists before accessing it
-		health_bar.value = health  # Update the health bar value
-	print("Tower health: ", health)  # For debugging
+	if health_bar and health_bar.is_inside_tree():
+		health_bar.value = health
+	print("Tower health: ", health)
 	
-	# If tower's health reaches zero, change its state to ruin
+	# Handle tower destruction
 	if health <= 0:
-		is_ruined = true  # Set ruin state flag
-		animated_sprite.animation = "ruin"  # Change animation to ruin
+		is_ruined = true
+		is_idle = false  # Disable idle checks
+		animated_sprite.animation = "ruin"
 		
-		# Stop the stopwatch and set time to 0:00
 		if stopwatch:
-			stopwatch.time_left = 0.0  # Set time left to 0
-			stopwatch.is_running = false  # Stop the stopwatch
-			stopwatch.update_timer_label()  # Update label to reflect time change
-
-		# Remove the health bar from the scene tree
+			stopwatch.time_left = 0.0
+			stopwatch.is_running = false
+			stopwatch.update_timer_label()
+		
 		if health_bar and health_bar.is_inside_tree():
 			remove_child(health_bar)
-			health_bar.queue_free()  # Free the node to prevent memory leaks
+			health_bar.queue_free()
 		
 		AudioManager.play_sound_effect("ruin")
-		GameManager.remove_coins(10)  # Deduct coins or add destruction logic
+		GameManager.remove_coins(10)
 
 func _on_tower_area_area_entered(area: Area2D):
 	if area.get_parent().has_method("player"):
 		stopwatch.start()
+		is_idle = false  # Reset idle state when timer restarts
 		
-		# Only create a new health bar if it doesn't exist and the tower isn't ruined
+		# Create health bar if needed
 		if not has_node("health_bar") and not is_ruined:
-			print("Creating new Health Bar")  # Debugging output
-			health_bar = ProgressBar.new()  # Create a new ProgressBar if it doesn't exist
-			health_bar.name = "health_bar"  # Set its name
-			health_bar.max_value = health_max  # Set its max value
-			health_bar.value = health  # Set its initial value
-			add_child(health_bar)  # Add it as a child of the tower
+			print("Creating new Health Bar")
+			health_bar = ProgressBar.new()
+			health_bar.name = "health_bar"
+			health_bar.max_value = health_max
+			health_bar.value = health
+			add_child(health_bar)
 		
-		if health_bar and not is_ruined:  # Ensure valid instance before modifying visibility
-			print("Showing Health Bar.")  # Debugging output
-			health_bar.visible = true  # Show the health bar progress bar when the stopwatch starts
+		if health_bar and not is_ruined:
+			print("Showing Health Bar.")
+			health_bar.visible = true
 
 func check_level_cleared():
 	var enemies_remaining = get_tree().get_nodes_in_group("enemies").size()
-	
+	print("Enemies remaining:", enemies_remaining)
 	if enemies_remaining == 0:
 		var level_number = get_current_level_number()
-		GameManager.clear_level(level_number)  # Call GameManager to mark level cleared
+		if level_number != -1:
+			GameManager.clear_level(level_number)
+			print("Level cleared, current unlocked levels:", GameManager.level_data.unlocked_levels)
 
 func get_current_level_number() -> int:
 	var scene_name = get_tree().current_scene.name
-	
 	match scene_name:
-		"Game": return 1   # Main game scene named "Game"
-		"Level2": return 2       # Level named "Level2"
-		"Level3": return 3       # Level named "Level3"
-		"Level4": return 4       # Level named "Level4"
-		"Level5": return 5       # Level named "Level5"
-	
-	return -1             # Return -1 for invalid level names (shouldn't happen)
+		"Game": return 1
+		"Level2": return 2
+		"Level3": return 3
+		"Level4": return 4
+		"Level5": return 5
+	return -1
 
 func tower():
-	pass 
+	pass
